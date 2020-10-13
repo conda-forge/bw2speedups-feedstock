@@ -3,7 +3,7 @@ About bw2speedups
 
 Home: https://bitbucket.org/cmutel/brightway2-speedups
 
-Package license: BSD 3-Clause
+Package license: BSD-3-Clause
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/bw2speedups-feedstock/blob/master/LICENSE.txt)
 
