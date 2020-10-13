@@ -2,17 +2,16 @@
 {% set version = "2.3" %}
 
 package:
-  name: '{{ name|lower }}'
-  version: '{{ version }}'
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  fn: '{{ name }}-{{ version }}.tar.gz'
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  'sha256': '4717aabbc4d3aba28f3f7368ad74807053c6db65842d0d5a772d42785ae9e7cb'
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/bw2speedups-{{ version }}.tar.gz
+  sha256: 4717aabbc4d3aba28f3f7368ad74807053c6db65842d0d5a772d42785ae9e7cb
 
 build:
   number: 2
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
@@ -29,10 +28,14 @@ requirements:
 test:
   imports:
     - bw2speedups
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://bitbucket.org/cmutel/brightway2-speedups
-  license: BSD 3-Clause
+  license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
   summary: Cython functions to speed up Brightway2 LCA calculations
