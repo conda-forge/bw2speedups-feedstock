@@ -1,5 +1,5 @@
 {% set name = "bw2speedups" %}
-{% set version = "2.3" %}
+{% set version = "2.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/bw2speedups-{{ version }}.tar.gz
-  sha256: 4717aabbc4d3aba28f3f7368ad74807053c6db65842d0d5a772d42785ae9e7cb
+  sha256: a1c8b7505655f3a39e71e9db4138339b6245ace9c93e23519aeaa5f0af3cdef7
 
 build:
-  number: 3
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -34,16 +34,13 @@ test:
     - pip
 
 about:
-  home: https://bitbucket.org/cmutel/brightway2-speedups
+  home: https://github.com/brightway-lca/brightway2-speedups
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
   summary: Cython functions to speed up Brightway2 LCA calculations
   description: 'A series of function written in Cython that speed up critical functions to improve the overall performance of the Brightway2 life cycle assessment framework.'
-  doc_url: https://bitbucket.org/cmutel/brightway2-speedups
-  dev_url: https://bitbucket.org/cmutel/brightway2-speedups
 
 extra:
   recipe-maintainers:
-    - cardosan
     - cmutel
