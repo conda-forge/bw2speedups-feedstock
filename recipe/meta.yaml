@@ -10,7 +10,7 @@ source:
   sha256: bb2adaf0b83355a73de86b88206fca1a1dadad9362918cd739f74a775a79cd74
 
 build:
-  number: 0
+  number: 1
   script:
     - {{ PYTHON }} setup.py build_ext -j{{ CPU_COUNT }}
     - {{ PYTHON }} -m pip install . -vv
